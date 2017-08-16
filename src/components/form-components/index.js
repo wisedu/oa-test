@@ -1,4 +1,4 @@
-import { Field } from 'bh-mint-ui2'
+// import { Field } from 'bh-mint-ui2'
 
 const EmapSwitch = {
   template: `<mt-cell :title="label">
@@ -12,7 +12,7 @@ const EmapSwitch = {
 
 export default {
   components: {
-    _text: Field,
+    // _text: Field,
     _switcher: EmapSwitch
   }
 }
