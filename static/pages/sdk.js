@@ -52,6 +52,38 @@
     return Promise.all([pageLoad, loadScript(eventMapUrl)])
   }
 
+  smile.DataSourceFactory = {
+    create: function(fst, snd, trd){
+        function deepFreeze(obj) {
+            var propNames = Object.getOwnPropertyNames(obj);
+            propNames.forEach(function(name) {
+                var prop = obj[name];
+                if (typeof prop == 'object' && prop !== null)
+                    deepFreeze(prop);
+            });
+            return Object.freeze(obj);
+        }
+
+        var ds;
+        eval("ds = new " + fst.adapter + "(fst.meta)");
+        if(typeof(snd) === "string" && typeof(trd) === "string"){
+            return ds.loadMeta(snd, trd);
+        }else if(typeof(fst) == "object"){
+            ds.actions = fst.actions;
+    
+            // Object.defineProperty(ds, 'meta', {
+            //     enumerable: false,
+            //     configurable: false,
+            //     writable: false
+            // });
+            // deepFreeze(ds);
+            return ds;
+        }else{
+            throw "初始化参数有误";
+        }
+    }
+}
+
   /**
    * 异步加载js
    * @param {*} url 
