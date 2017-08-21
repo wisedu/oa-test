@@ -1,4 +1,3 @@
-// import { Field } from 'bh-mint-ui2'
 
 const EmapSwitch = {
   template: `<mt-cell :title="label">
@@ -12,7 +11,13 @@ const EmapSwitch = {
 
 export default {
   components: {
-    // _text: Field,
-    _switcher: EmapSwitch
+    _text: window.MINT.Field,
+    _switcher: EmapSwitch,
+    _select: window.MINT.Selector,
+    '_number-range': window.MINT.Field,
+    '_date-full': window.MINT.Field,
+    '_tree': window.MINT.Field,
+    '_cache-upload': window.MINT.Field,
+    '_textarea': window.MINT.Field
   }
 }

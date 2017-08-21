@@ -863,9 +863,9 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
-bh-mint-ui2@^0.0.26:
-  version "0.0.26"
-  resolved "https://registry.yarnpkg.com/bh-mint-ui2/-/bh-mint-ui2-0.0.26.tgz#739c3acdea2b5425580902950845467705204960"
+bh-mint-ui2@^0.0.29:
+  version "0.0.29"
+  resolved "https://registry.yarnpkg.com/bh-mint-ui2/-/bh-mint-ui2-0.0.29.tgz#f8d210732ae64f9c4270dd80c52855692b3bc19c"
   dependencies:
     array-find-index "^1.0.2"
     axios "^0.16.2"

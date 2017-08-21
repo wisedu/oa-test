@@ -97,7 +97,8 @@ if (process.env.NODE_ENV === 'production') {
       'process.env': {
         NODE_ENV: '"development"'
       },
-      "WEBPACK_CONIFG_HOST":'"http://localhost:8080/emap/"'
+      "WEBPACK_CONIFG_HOST":'"http://localhost:8080"',
+      "CONTEXT_PATH": "'/emap'"
     })
   ])
 }
