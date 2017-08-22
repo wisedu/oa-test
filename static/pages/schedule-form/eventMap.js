@@ -116,14 +116,25 @@
         store.module1.datasource.ds1 = data;
     });
     
-    window.smile.DataSourceFactory.create(meta, "./static/json/meta.json", "T_OA_XFW_QUERY").then(function(ds2){
+    window.smile.DataSourceFactory.createOnline(meta, {
+        url:"./static/meta.json", 
+        modelname:"T_OA_XFW_QUERY",
+        events:{
+            onLoadMeta: function(data){
+                return data;
+            },
+            onLoadControl: function(control){
+                return control;
+            }
+        }
+    }).then(function(ds2){
         var meta2 = ds2.meta("search");
         ds2.execute(ds1.actions.save, {key:"1"}).then(function(data){
             store.module1.datasource.ds1 = data;
         });
     })
 
-    
+
     return smile.post(WEBPACK_CONIFG_HOST + 'xsxxdbwh/T_PXXX_XSJBXX_ADD.do', data)
   }
 })(window.smile = window.smile || { eventMap: {} })

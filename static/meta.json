@@ -1,0 +1,358 @@
+{
+    "datas": {},
+    "models": [
+        {
+            "name": "T_OA_XFW_QUERY",
+            "modelName": "T_OA_XFW",
+            "appName": "oaxfw",
+            "url": "ng/T_OA_XFW_QUERY.do",
+            "controls": [
+                {
+                    "name": "WID",
+                    "dataType": "String",
+                    "caption": "主键",
+                    "dataSize": 100,
+                    "hidden": true
+                },
+                {
+                    "name": "FILE_TYPE",
+                    "dataType": "String",
+                    "caption": "文件类别",
+                    "url": "/oa/code/51c962c4-cf63-434c-b352-38a99acee4ca/fw_type.do",
+                    "search.xtype": "multi-select2",
+                    "xtype": "select",
+                    "dataSize": 100
+                },
+                {
+                    "name": "FILE_NO",
+                    "dataType": "String",
+                    "caption": "文号",
+                    "dataSize": 100
+                },
+                {
+                    "name": "TITLE",
+                    "dataType": "String",
+                    "caption": "标题",
+                    "quickSearch": true,
+                    "grid.fixed": true,
+                    "dataSize": 400
+                },
+                {
+                    "name": "AUTHOR_ID",
+                    "dataType": "String",
+                    "caption": "拟稿人ID",
+                    "dataSize": 100,
+                    "hidden": true
+                },
+                {
+                    "name": "AUTHOR_NAME",
+                    "dataType": "String",
+                    "caption": "拟稿人",
+                    "dataSize": 100
+                },
+                {
+                    "name": "DEPT_ID",
+                    "dataType": "String",
+                    "caption": "拟稿部门ID",
+                    "dataSize": 100,
+                    "hidden": true
+                },
+                {
+                    "name": "DEPT_NAME",
+                    "dataType": "String",
+                    "caption": "拟稿部门",
+                    "xtype": "",
+                    "dataSize": 100
+                },
+                {
+                    "name": "MAIN_SEND",
+                    "dataType": "String",
+                    "caption": "主送",
+                    "dataSize": 200
+                },
+                {
+                    "name": "COPY_SEND",
+                    "dataType": "String",
+                    "caption": "抄送",
+                    "dataSize": 200
+                },
+                {
+                    "name": "PAGEOFFICE",
+                    "dataType": "String",
+                    "caption": "正文",
+                    "grid.hidden": true,
+                    "xtype": "",
+                    "dataSize": 100
+                },
+                {
+                    "name": "ATT_TOKEN",
+                    "dataType": "String",
+                    "caption": "附件",
+                    "grid.hidden": true,
+                    "xtype": "uploadfile",
+                    "dataSize": 100
+                },
+                {
+                    "name": "PUBLIC_TYPE",
+                    "dataType": "String",
+                    "caption": "公开属性 ",
+                    "url": "/oa/code/51c962c4-cf63-434c-b352-38a99acee4ca/pub_type.do",
+                    "search.xtype": "multi-select2",
+                    "xtype": "select",
+                    "dataSize": 100
+                },
+                {
+                    "name": "TEL",
+                    "dataType": "String",
+                    "caption": "联系电话 ",
+                    "checkSize": 100,
+                    "dataSize": 100
+                },
+                {
+                    "name": "COPIES",
+                    "dataType": "String",
+                    "caption": "印制份数 ",
+                    "checkType": "custom[integer+]",
+                    "dataSize": 100
+                },
+                {
+                    "name": "URGENCY",
+                    "dataType": "String",
+                    "caption": "紧急程度 ",
+                    "url": "/oa/code/51c962c4-cf63-434c-b352-38a99acee4ca/urgency_level.do",
+                    "search.xtype": "multi-select2",
+                    "xtype": "select",
+                    "dataSize": 100
+                },
+                {
+                    "name": "REMARK",
+                    "dataType": "String",
+                    "caption": "备注",
+                    "col": 2,
+                    "xtype": "textarea",
+                    "dataSize": 2000
+                },
+                {
+                    "name": "DEPT_COMMENT",
+                    "dataType": "String",
+                    "caption": "部门意见",
+                    "grid.hidden": true,
+                    "xtype": "",
+                    "dataSize": 100
+                },
+                {
+                    "name": "OFFICE_COMMENT",
+                    "dataType": "String",
+                    "caption": "党政办意见",
+                    "grid.hidden": true,
+                    "xtype": "",
+                    "dataSize": 100
+                },
+                {
+                    "name": "LEADER_COMMENT",
+                    "dataType": "String",
+                    "caption": "签发意见",
+                    "grid.hidden": true,
+                    "xtype": "",
+                    "dataSize": 100
+                },
+                {
+                    "name": "REVIEW_COMMENT",
+                    "dataType": "String",
+                    "caption": "审阅意见",
+                    "grid.hidden": true,
+                    "xtype": "",
+                    "dataSize": 100
+                },
+                {
+                    "name": "CONCURRENT_COMMENT",
+                    "dataType": "String",
+                    "caption": "会签意见",
+                    "grid.hidden": true,
+                    "xtype": "",
+                    "dataSize": 100
+                },
+                {
+                    "name": "PROCESS_INST_ID",
+                    "dataType": "String",
+                    "caption": "流程实例ID",
+                    "dataSize": 100,
+                    "hidden": true
+                },
+                {
+                    "name": "ISEND",
+                    "dataType": "String",
+                    "caption": "是否办结",
+                    "dataSize": 10,
+                    "hidden": true
+                },
+                {
+                    "name": "CREATE_TIME",
+                    "dataType": "Timestamp",
+                    "caption": "文档创建时间",
+                    "dataSize": 7,
+                    "hidden": true
+                },
+                {
+                    "name": "TRASH_FLAG",
+                    "dataType": "String",
+                    "caption": "回收站标志",
+                    "dataSize": 10,
+                    "hidden": true
+                },
+                {
+                    "name": "GD_FLAG",
+                    "dataType": "String",
+                    "caption": "归档标志",
+                    "dataSize": 10,
+                    "hidden": true
+                },
+                {
+                    "name": "DB_FLAG",
+                    "dataType": "String",
+                    "caption": "督办标志",
+                    "dataSize": 10,
+                    "hidden": true
+                },
+                {
+                    "name": "SECRECY",
+                    "dataType": "String",
+                    "caption": "保密期限",
+                    "dataSize": 100
+                },
+                {
+                    "name": "FILE_GENRE",
+                    "dataType": "String",
+                    "caption": "文种",
+                    "dataSize": 100
+                },
+                {
+                    "name": "SECRET_LEVEL",
+                    "dataType": "String",
+                    "caption": "密级",
+                    "dataSize": 100
+                },
+                {
+                    "name": "SIGN_NAME",
+                    "dataType": "String",
+                    "caption": "签发人",
+                    "dataSize": 100
+                },
+                {
+                    "name": "CHECK_NAME",
+                    "dataType": "String",
+                    "caption": "校对人",
+                    "dataSize": 100
+                },
+                {
+                    "name": "YL01",
+                    "dataType": "String",
+                    "caption": "预留字段01",
+                    "dataSize": 100
+                },
+                {
+                    "name": "YL02",
+                    "dataType": "String",
+                    "caption": "预留字段02",
+                    "dataSize": 100
+                },
+                {
+                    "name": "YL03",
+                    "dataType": "String",
+                    "caption": "预留字段03",
+                    "dataSize": 100
+                },
+                {
+                    "name": "YL04",
+                    "dataType": "String",
+                    "caption": "预留字段04",
+                    "dataSize": 100
+                },
+                {
+                    "name": "YL05",
+                    "dataType": "String",
+                    "caption": "预留字段05",
+                    "dataSize": 100
+                },
+                {
+                    "name": "YL06",
+                    "dataType": "String",
+                    "caption": "预留字段06",
+                    "dataSize": 100
+                },
+                {
+                    "name": "YL07",
+                    "dataType": "String",
+                    "caption": "预留字段07",
+                    "dataSize": 100
+                },
+                {
+                    "name": "YL08",
+                    "dataType": "String",
+                    "caption": "预留字段08",
+                    "dataSize": 100
+                },
+                {
+                    "name": "YL09",
+                    "dataType": "String",
+                    "caption": "预留字段09",
+                    "dataSize": 100
+                },
+                {
+                    "name": "YL10",
+                    "dataType": "String",
+                    "caption": "预留字段10",
+                    "dataSize": 100
+                },
+                {
+                    "name": "DOC_RESOURCE",
+                    "dataType": "String",
+                    "caption": "表单资源名称",
+                    "dataSize": 100,
+                    "hidden": true
+                },
+                {
+                    "name": "CREATE_DATE",
+                    "dataType": "Timestamp",
+                    "caption": "拟稿日期",
+                    "dataSize": 7
+                },
+                {
+                    "name": "FORMATION_DATE",
+                    "dataType": "Timestamp",
+                    "caption": "成文日期",
+                    "dataSize": 7
+                },
+                {
+                    "name": "BH_ORGID",
+                    "dataType": "String",
+                    "caption": "编号机关代字ID",
+                    "dataSize": 100,
+                    "hidden": true
+                },
+                {
+                    "name": "BH_YEAR",
+                    "dataType": "String",
+                    "caption": "编号年份",
+                    "dataSize": 100,
+                    "hidden": true
+                },
+                {
+                    "name": "BH_NO",
+                    "dataType": "String",
+                    "caption": "编号号码",
+                    "dataSize": 100,
+                    "hidden": true
+                },
+                {
+                    "name": "CHECK_COMMENT",
+                    "dataType": "String",
+                    "caption": "校对意见",
+                    "dataSize": 100
+                }
+            ]
+        }
+    ],
+    "routes": {},
+    "code": "0"
+}

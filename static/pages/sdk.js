@@ -53,7 +53,7 @@
   }
 
   smile.DataSourceFactory = {
-    create: function(fst, snd, trd){
+    create: function(meta, params){
         function deepFreeze(obj) {
             var propNames = Object.getOwnPropertyNames(obj);
             propNames.forEach(function(name) {
@@ -65,22 +65,21 @@
         }
 
         var ds;
-        eval("ds = new " + fst.adapter + "(fst.meta)");
-        if(typeof(snd) === "string" && typeof(trd) === "string"){
-            return ds.loadMeta(snd, trd);
-        }else if(typeof(fst) == "object"){
-            ds.actions = fst.actions;
-    
-            // Object.defineProperty(ds, 'meta', {
-            //     enumerable: false,
-            //     configurable: false,
-            //     writable: false
-            // });
-            // deepFreeze(ds);
-            return ds;
-        }else{
-            throw "初始化参数有误";
-        }
+        eval("ds = new " + meta.adapter + "(meta.meta)");
+        ds.actions = meta.actions;
+        // Object.defineProperty(ds, 'meta', {
+        //     enumerable: false,
+        //     configurable: false,
+        //     writable: false
+        // });
+        // deepFreeze(ds);
+        return ds;
+    },
+    createOnline: function(meta, params){
+      var ds;
+      eval("ds = new " + meta.adapter + "()");
+      ds.events = params.events;
+      return ds.loadMeta(params.url, params.modelname);
     }
 }
 
