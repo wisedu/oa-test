@@ -4,7 +4,7 @@
   <template v-if="useGroup && groupModel[0] && groupModel[0].groupName">123</template>  
   <!-- 不分组表单 -->
   <template v-else>
-    <form-block :model="groupModel"></form-block>
+    <form-block :model="groupModel" ></form-block>
   </template>
 </div>  
 </template>
@@ -18,6 +18,11 @@ export default {
     useGroup: {type: Boolean, default: true }
   },
   computed: {
+    currentValue: {
+      get () {
+
+      }
+    },
     groupModel () {
       if (!this.model || this.model.length === 0) return []
       if (!this.model[0].groupName) {

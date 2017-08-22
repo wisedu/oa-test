@@ -63,7 +63,18 @@ module.exports = {
     historyApiFallback: true,
     noInfo: true,
     host: '0.0.0.0',
-    port: 8088
+    port: 8088,
+    proxy: {
+      '/emap/sys/student_app1.2/*default/index.do': {
+        bypass: function(req, res, proxyOptions) {
+          if (req.url.indexOf('index.do') > -1) {
+            return '/index.html'
+          } else {
+            return req.url.replace('/emap/sys/student_app1.2/*default', '')
+          }
+        }
+      } 
+    }
   },
   performance: {
     hints: false
