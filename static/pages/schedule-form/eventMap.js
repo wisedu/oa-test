@@ -30,8 +30,47 @@
             }
         },
         meta:[{
-                id:"diA",
-                name: "数据项A", 
+            id:"diA",
+            name: "数据项A", 
+            type: "string", //string/int/number
+            require: true,
+            collective:false,//返回结果是集合
+            selectable:true,
+            length:"",
+            scale:"",
+            children: []
+        },{
+            id:"diB",
+            name: "数据项B", 
+            type: "int", //string/int/number
+            require: true,
+            collective:false,//返回结果是集合
+            selectable:true,
+            length:"",
+            scale:"",
+            children: []
+        },{
+            id:"diC",
+            name: "数据项C", 
+            type: "int", //string/int/number
+            require: false,
+            collective:false,//返回结果是集合
+            selectable:true,
+            length:"",
+            scale:"",
+            children: []
+        },{
+            id:"tA",
+            name: "表A", 
+            type: "table", //string/int/number
+            require: false,
+            collective:false,//返回结果是集合
+            selectable:true,
+            length:"",
+            scale:"",
+            children: [{
+                id:"diD",
+                name: "数据项D", 
                 type: "string", //string/int/number
                 require: true,
                 collective:false,//返回结果是集合
@@ -39,10 +78,9 @@
                 length:"",
                 scale:"",
                 children: []
-            },
-            {
-                id:"diB",
-                name: "数据项B", 
+            },{
+                id:"diE",
+                name: "数据项E", 
                 type: "int", //string/int/number
                 require: true,
                 collective:false,//返回结果是集合
@@ -50,10 +88,9 @@
                 length:"",
                 scale:"",
                 children: []
-            },
-            {
-                id:"diC",
-                name: "数据项C", 
+            },{
+                id:"diF",
+                name: "数据项F", 
                 type: "int", //string/int/number
                 require: false,
                 collective:false,//返回结果是集合
@@ -61,57 +98,12 @@
                 length:"",
                 scale:"",
                 children: []
-            },
-            {
-                id:"tA",
-                name: "表A", 
-                type: "table", //string/int/number
-                require: false,
-                collective:false,//返回结果是集合
-                selectable:true,
-                length:"",
-                scale:"",
-                children: [
-                    {
-                        id:"diD",
-                        name: "数据项D", 
-                        type: "string", //string/int/number
-                        require: true,
-                        collective:false,//返回结果是集合
-                        selectable:true,
-                        length:"",
-                        scale:"",
-                        children: []
-                    },
-                    {
-                        id:"diE",
-                        name: "数据项E", 
-                        type: "int", //string/int/number
-                        require: true,
-                        collective:false,//返回结果是集合
-                        selectable:true,
-                        length:"",
-                        scale:"",
-                        children: []
-                    },
-                    {
-                        id:"diF",
-                        name: "数据项F", 
-                        type: "int", //string/int/number
-                        require: false,
-                        collective:false,//返回结果是集合
-                        selectable:true,
-                        length:"",
-                        scale:"",
-                        children: []
-                    }
-                ]
-            }
-        ]
+            }]
+        }]
     };
     
     var ds1 = window.smile.DataSourceFactory.create(meta);
-    var meta1 = ds1.meta("form");
+    var meta1 = ds1.meta();
     ds1.execute(ds1.actions.find, {key:"1"}).then(function(data){
         store.module1.datasource.ds1 = data;
     });

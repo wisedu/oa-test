@@ -27,9 +27,11 @@ var EMAPDataAdapter = function(meta){
             control["smile_require"] = control.required;
             control["smile_collective"] = false;//返回结果是集合
             control["smile_selectable"] = true;
-            control["smile_length"] = control.dataSize;
+            control["smile_length"] = control.checkSize || control.dataSize;
             control["smile_scale"] = "";
             control["smile_children"] = [];
+            control["smile_hidden"] = control.hidden;
+            control["smile_readonly"] = control.readonly;
 
             if(typeof(onLoadMeta) === "function"){
                 control = onLoadMeta(control);
