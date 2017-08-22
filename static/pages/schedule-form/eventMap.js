@@ -30,75 +30,45 @@
             }
         },
         meta:[{
-            id:"diA",
-            name: "数据项A", 
-            type: "string", //string/int/number
-            require: true,
-            collective:false,//返回结果是集合
-            selectable:true,
-            length:"",
-            scale:"",
-            children: []
+            smile_id:"diA",
+            smile_name: "数据项A", 
+            smile_type: "string", //string/int/number
+            smile_require: true,
+            smile_collective:false,//返回结果是集合
+            smile_selectable:true,
+            smile_length:"",
+            smile_scale:"",
+            smile_children: []
         },{
-            id:"diB",
-            name: "数据项B", 
-            type: "int", //string/int/number
-            require: true,
-            collective:false,//返回结果是集合
-            selectable:true,
-            length:"",
-            scale:"",
-            children: []
+            smile_id:"diB",
+            smile_name: "数据项B", 
+            smile_type: "int", //string/int/number
+            smile_require: true,
+            smile_collective:false,//返回结果是集合
+            smile_selectable:true,
+            smile_length:"",
+            smile_scale:"",
+            smile_children: []
         },{
-            id:"diC",
-            name: "数据项C", 
-            type: "int", //string/int/number
-            require: false,
-            collective:false,//返回结果是集合
-            selectable:true,
-            length:"",
-            scale:"",
-            children: []
+            smile_id:"diC",
+            smile_name: "数据项C", 
+            smile_type: "int", //string/int/number
+            smile_require: false,
+            smile_collective:false,//返回结果是集合
+            smile_selectable:true,
+            smile_length:"",
+            smile_scale:"",
+            smile_children: []
         },{
-            id:"tA",
-            name: "表A", 
-            type: "table", //string/int/number
-            require: false,
-            collective:false,//返回结果是集合
-            selectable:true,
-            length:"",
-            scale:"",
-            children: [{
-                id:"diD",
-                name: "数据项D", 
-                type: "string", //string/int/number
-                require: true,
-                collective:false,//返回结果是集合
-                selectable:true,
-                length:"",
-                scale:"",
-                children: []
-            },{
-                id:"diE",
-                name: "数据项E", 
-                type: "int", //string/int/number
-                require: true,
-                collective:false,//返回结果是集合
-                selectable:true,
-                length:"",
-                scale:"",
-                children: []
-            },{
-                id:"diF",
-                name: "数据项F", 
-                type: "int", //string/int/number
-                require: false,
-                collective:false,//返回结果是集合
-                selectable:true,
-                length:"",
-                scale:"",
-                children: []
-            }]
+            smile_id:"tA",
+            smile_name: "表A", 
+            smile_type: "table", //string/int/number
+            smile_require: false,
+            smile_collective:false,//返回结果是集合
+            smile_selectable:true,
+            smile_length:"",
+            smile_scale:"",
+            smile_children: []
         }]
     };
     

@@ -7,10 +7,18 @@ var EMAPDataAdapter = function(meta){
             console.trace();
             return;
         }
-        var category_meta = [];
+        var category_meta = {
+            default:[],
+            form:[], 
+            grid:[], 
+            search:[]
+        }
+        Object.defineProperty(category_meta, 'default', {
+            enumerable: false
+        });
         
-        for (var i = 0; i < controls.length; i++) {
-            var control = controls[i];
+        for (var control_index = 0; control_index < controls.length; control_index++) {
+            var control = controls[control_index];
 
             control["smile_id"] = control.name;
             control["smile_name"] = control.caption;
@@ -22,12 +30,31 @@ var EMAPDataAdapter = function(meta){
             control["smile_length"] = control.checkSize || control.dataSize;
             control["smile_scale"] = "";
             control["smile_children"] = [];
+            control["smile_hidden"] = control.hidden;
+            control["smile_readonly"] = control.readonly;
 
             if(typeof(onLoadMeta) === "function"){
                 control = onLoadMeta(control);
             }
+
             //行控件对象复制
-            category_meta.push(JSON.parse(JSON.stringify(control)));
+            category_meta["default"].push(JSON.parse(JSON.stringify(control)));
+
+            //EMAP中，字段有类型的作用范围，在此预先生成作用范围
+            for (var type in category_meta) {
+                var type_meta = category_meta[type];
+                
+                var type_control = {};
+                for (var key in control) {
+                    if(key.indexOf(type+".") > -1){
+                        var shortkey = key.substr(key.indexOf(type+".") + (type+".").length);
+                        type_control[shortkey] = control[key];
+                    }else if(key.indexOf(".") == -1){
+                        type_control[key] = control[key];
+                    }
+                }
+                type_meta.push(type_control);
+            }
         }
         return category_meta;
     }
@@ -49,8 +76,12 @@ var EMAPDataAdapter = function(meta){
             onLoadMeta: null,
             onRefreshed: null
         },
-        meta: function(){
-            return _category_meta;
+        meta: function(type){
+            if(type === undefined){
+                return _category_meta["default"];
+            }else{
+                return _category_meta[type];
+            }
         },
         load: function(uri, modelName){
             var self = this;
