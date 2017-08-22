@@ -75,11 +75,11 @@
         // deepFreeze(ds);
         return ds;
     },
-    createOnline: function(meta, params){
+    createOnline: function(adapter, params){
       var ds;
-      eval("ds = new " + meta.adapter + "()");
+      eval("ds = new " + adapter + "()");
       ds.events = params.events;
-      return ds.loadMeta(params.url, params.modelname);
+      return ds.load(params.url, params.modelname);
     }
 }
 

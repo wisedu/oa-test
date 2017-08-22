@@ -116,7 +116,7 @@
         store.module1.datasource.ds1 = data;
     });
     
-    window.smile.DataSourceFactory.createOnline(meta, {
+    window.smile.DataSourceFactory.createOnline("EMAPDataAdapter", {
         url:"./static/meta.json", 
         modelname:"T_OA_XFW_QUERY",
         events:{
