@@ -45,7 +45,7 @@ export default {
     global.SDK.setTitleText("首页")
   },
   mounted () {
-    axios.post('http://172.16.26.56:8080/emap/sys/student_app1.2/modules/tableForm.do?*json=1').then(resp => {
+    axios.post(WEBPACK_CONIFG_HOST + CONTEXT_PATH + '/sys/student_app1.2/modules/tableForm.do?*json=1').then(resp => {
       let res = resp.data
       this.model = res.models.filter(item => item.name === 'T_PXXX_XSJBXX_QUERY')[0].controls
     })
