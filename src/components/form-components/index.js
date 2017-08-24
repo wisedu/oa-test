@@ -1,5 +1,6 @@
 
 const EmapSwitch = {
+  name: 'mt-switcher',
   template: `<mt-cell :title="label">
     <mt-switch  ></mt-switch>
   </mt-cell>`,
@@ -10,7 +11,6 @@ const EmapSwitch = {
 }
 
 export default {
-  components: {
     _text: window.MINT.Field,
     _switcher: EmapSwitch,
     _select: window.MINT.Selector,
@@ -19,5 +19,4 @@ export default {
     '_tree': window.MINT.Field,
     '_cache-upload': window.MINT.Field,
     '_textarea': window.MINT.Field
-  }
 }

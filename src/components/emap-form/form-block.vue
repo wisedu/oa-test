@@ -72,7 +72,7 @@ export default {
   ready () {
     this.initOptions()
   },
-  components: Components.components
+  components: Components
 }
 </script>
 <style>

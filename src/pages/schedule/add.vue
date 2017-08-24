@@ -1,6 +1,6 @@
 <template>
   <div>
-      <schedule-form v-model="formData" smile-guid="schedule-form"></schedule-form>  
+      <smile-form v-model="formData" smile-guid="smile-form"></smile-form>  
       <mt-button @click="submit" type="primary" size="large">这是一个组件外的按钮</mt-button>
   </div>
 </template>
@@ -13,7 +13,7 @@ export default {
   },
   methods: {
     submit () {
-      window.smile.syncData('schedule-form')
+      window.smile.syncData('smile-form')
     }
   }
 }
