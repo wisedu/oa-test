@@ -82,10 +82,10 @@
         url:"./static/meta.json", 
         modelname:"T_OA_XFW_QUERY",
         events:{
-            onLoadMeta: function(data){
+            onLoad: function(data){
                 return data;
             },
-            onLoadControl: function(control){
+            onLoadMeta: function(control){
                 return control;
             }
         }
