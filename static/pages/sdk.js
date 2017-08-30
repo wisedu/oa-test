@@ -19,7 +19,13 @@
    * @param {Object} data - 请求参数，JSON对象
    */
   smile.post = function (url, data) {
-    return axios.post(url, serializeData(data))
+    return new Promise((resolve, reject) => {
+      axios.post(url, serializeData(data)).then(resp => {
+        resolve(resp.data)
+      }, error => {
+        reject(error)
+      })
+    })
   }
 
   /**
@@ -32,7 +38,13 @@
     if (data) {
       url += '?' + data
     }
-    return axios.post(url)
+    return new Promise((resolve, reject) => {
+      axios.get(url).then(resp => {
+        resolve(resp.data)
+      }, error => {
+        reject(error)
+      })
+    })
   }
 
   /**

@@ -5,8 +5,8 @@ const EmapSwitch = {
     <mt-switch  ></mt-switch>
   </mt-cell>`,
   props: {
-    label: { type: String, default: '' }
-
+    label: { type: String, default: '' },
+    value: { default: 0 }
   }
 }
 

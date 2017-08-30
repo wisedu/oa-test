@@ -1,10 +1,10 @@
 <template>
 <div>
   <!-- 分组表单 -->
-  <template v-if="useGroup && groupModel[0] && groupModel[0].groupName">123</template>  
+  <template v-if="useGroup && groupModel[0] && groupModel[0].groupName"></template>  
   <!-- 不分组表单 -->
   <template v-else>
-    <form-block :model="groupModel" ></form-block>
+    <form-block :model="groupModel" v-model="currentValue"></form-block>
   </template>
 </div>  
 </template>
@@ -20,7 +20,10 @@ export default {
   computed: {
     currentValue: {
       get () {
-
+        return JSON.parse(JSON.stringify(this.value))
+      },
+      set (val) {
+        this.$emit('input', val)
       }
     },
     groupModel () {

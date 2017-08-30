@@ -30,6 +30,7 @@ export default {
     currentValue: {
       deep: true,
       handler (val) {
+        console.log(val)
         this.$emit('input', val)
       }
     }
